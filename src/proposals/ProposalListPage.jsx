@@ -11,7 +11,7 @@ export const ProposalListPage = () => {
     const [proposals, setProposals] = useState([])
 
     useEffect(() => {
-        getProposalList().then(proposals => {
+        getProposalList().then(proposals => { 
             setProposals(proposals);
             setIsLoading(false);
         });

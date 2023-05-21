@@ -32,7 +32,7 @@ export const ProposalDetailsPage = ({ talkId }) => {
   }
 
   return (
-    <Page className="ProposalDetailsPage" title={!talk ? "…" : "title"}>
+    <Page className="ProposalDetailsPage" title={!talk ? "…" : `title: ${talk.title}`}>
       <div className="ProposalDetailsPage__content">
         <div>
           <Link className="ProposalDetailsPage__back" to="/proposals">
@@ -40,8 +40,9 @@ export const ProposalDetailsPage = ({ talkId }) => {
           </Link>
         </div>
         {isLoading === true ? <Loading /> : ""}
-
-        <ProposalDetails talk={{}} />
+        {talk? 
+        <ProposalDetails talk={talk} />
+        : ""}
       </div>
     </Page>
   );
